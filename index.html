@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilos.css" media="screen" title="no title">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/game.js"></script>
+  <style>
+    /* Imagen del carousel responsive */
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script type="text/javascript">
+
+
+
+    window.onload=function(){
+
+    }
+
+
+  </script>
+  <title>InfoGames</title>
+</head>
+  <body>
+    <header>
+      <div id="subheader">
+        <div class="text"><p><a href="">InfoGames</a></p></div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <br>
+      <div class="carousel">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imagenes/slideshow/game1.jpg" alt="Game1">
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/slideshow/game2.jpg" alt="Game2">
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/slideshow/game3.jpg" alt="Game3">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      </div>
+      <div id="main">
+        <div class="navigation">
+        <nav class="navbar navbar-expand-sm navbar-custom">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
+            <i class="fa fa-bars fa-lg py-1 text-white"></i>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarCustom">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+            <span class="ml-auto navbar-text">Text</span>
+          </div>
+        </nav>
+        </div>
+        <table class="table table-striped table-dark">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+          </thead>
+          <tbody id="content-games">
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+      <footer>
+         <a>2019 - Miguel Carbonell Sevillano</a>
+      </footer>
+      </div>
+    </div>
+  </body>
+</html>
