@@ -10,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./js/game.js"></script>
+  <!-- <script type="text/javascript" src="./js/game.js"></script> -->
   <style>
     /* Imagen del carousel responsive */
     .carousel-inner img {
@@ -44,9 +44,9 @@
 
         <!-- Indicators -->
         <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="0" class="active" data-interval="2000"></li>
+          <li data-target="#demo" data-slide-to="1" data-interval="2000"></li>
+          <li data-target="#demo" data-slide-to="2" data-interval="2000"></li>
         </ul>
 
         <!-- The slideshow -->
@@ -81,34 +81,57 @@
           <div class="navbar-collapse collapse" id="navbarCustom">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Active</a>
+                <a class="nav-link" href="#">Gestión de Juegos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Jugadores</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Torneo</a>
               </li>
             </ul>
-            <span class="ml-auto navbar-text">Text</span>
           </div>
         </nav>
         </div>
+
+        <div class="container">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" class="col-sm-3">
+          <label for="lanzamiento">Lanzamiento</label>
+          <input type="text" id="lanzamiento" class="col-sm-3">
+          <label for="pegi">Pegi</label>
+          <input type="text" id="pegi" class="col-sm-3">
+        </div>
+
+        <div class="container2">
+          <label for="desarrollador">Desarrollador</label>
+          <input type="text" id="desarrollador" class="col-sm-5">
+          <label for="genero">Género</label>
+          <input type="text" id="genero" class="col-sm-5">
+        </div>
+
+        <div class="container">
+          <button type="button" class="btn btn-primary" onclick="printData()">Enviar</button>
+        </div>
+
+
+
         <table class="table table-striped table-dark">
           <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Desarollador</th>
+            <th scope="col">Lanzamiento</th>
           </tr>
           </thead>
+          <br>
           <tbody id="content-games">
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td id="salidaNombre"></td>
+            <td id="salidaDesarrollador"></td>
+            <td id="salidaLanzamiento">@</td>
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -126,10 +149,28 @@
         </table>
       </div>
       <div>
+
       <footer>
          <a>2019 - Miguel Carbonell Sevillano</a>
       </footer>
       </div>
     </div>
+  <script>
+
+    function printData() {
+      let nombre = document.getElementById("nombre").value;
+      let lanzamiento = document.getElementById("lanzamiento").value;
+      let pegi = document.getElementById("pegi");
+      let desarrollador = document.getElementById("desarrollador").value;
+      let genero = document.getElementById("genero");
+
+      document.getElementById("salidaNombre").innerHTML = nombre;
+      document.getElementById("salidaLanzamiento").innerHTML = lanzamiento;
+      //document.getElementById("Pegi").innerHTML = pegi;
+      document.getElementById("salidaDesarrollador").innerHTML = desarrollador;
+      //document.getElementById("Genero").innerHTML = genero;
+    }
+
+  </script>
   </body>
 </html>

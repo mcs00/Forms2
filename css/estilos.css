@@ -1,15 +1,26 @@
 /*general*/
 body {
   background: #E8E8E8;
-  font-family: Arial;
 }
 a {text-decoration: none; color: black}
 a:hover {text-decoration:underline;}
 
+.container{
+  display: flex;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.container2{
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .wrap {
   margin: auto;
   clear: both;
-  background-color: lightgrey;
+  background-color: lightgray;
   height: 1000px;
 }
 .carousel{
@@ -19,7 +30,7 @@ a:hover {text-decoration:underline;}
 }
 
 .navigation{
-  background-color: lightcyan;
+  background-color: black;
 }
 
 .navi{
@@ -32,23 +43,23 @@ a:hover {text-decoration:underline;}
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-  color: rgba(255,255,255,.8);
+  color: white;
 }
 
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-  color: rgba(255,255,255,.5);
+  color: white;
 }
 
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-  color: #ffffff;
+  color: white;
 }
 
 /* for dropdown only - change the color of droodown */
 .navbar-custom .dropdown-menu {
-  background-color: lightgray;
+  background-color: black;
 }
 .navbar-custom .dropdown-item {
   color: #ffffff;
@@ -89,27 +100,7 @@ background: black;
 }
 .text a:hover {text-decoration: none;}
 
-/*menu*/
-header #subheader nav {
-  float: left;
-  width: 660px;
-  padding: 30px 0px;
-  text-align: right;
-  }
 
-header #subheader nav ul li {
-  display: inline;
-  font-family: Arial;
-}
-
-header #subheader nav ul li a {
-  color: #000;
-  font-size: 18px;
-  padding: 10px;
-      border-radius: 2px;
-      -moz-border-radius: 2px;
-      -webkit-border-radius: 2px;
-}
 
 /*main*/
 #main {
