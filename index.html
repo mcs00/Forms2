@@ -128,22 +128,22 @@
           <br>
           <tbody id="content-games">
           <tr>
-            <th scope="row">1</th>
+            <th scope="row"></th>
             <td id="salidaNombre"></td>
             <td id="salidaDesarrollador"></td>
-            <td id="salidaLanzamiento">@</td>
+            <td id="salidaLanzamiento"></td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           </tbody>
         </table>
@@ -153,6 +153,10 @@
       <footer>
          <a>2019 - Miguel Carbonell Sevillano</a>
       </footer>
+        <div class="fields">
+          <div id="c_players" class=""></div>
+          <div id="c_players_pro"></div>
+        </div>
       </div>
     </div>
   <script>
@@ -170,6 +174,40 @@
       document.getElementById("salidaDesarrollador").innerHTML = desarrollador;
       //document.getElementById("Genero").innerHTML = genero;
     }
+
+    let games = [
+      ["1", "Call of Duty Modern Warfare", "2011", "18", "Activision", "Acción","test"],
+      ["2", "FIFA 17", "2017", "3", "EA", "Deportes","test"],
+      ["3", "Spider-Man The Game", "2018", "12", "Activision", "Aventura","test"],
+      ["4", "Need for Speed", "2016", "12", "EA", "Deportes","test"],
+      ["5", "Call of Duty Modern Warfare", "2011", "18", "Activision", "Acción","test"],
+      ["6", "Call of Duty Modern Warfare", "2011", "18", "Activision", "Acción","Test"]
+    ];
+
+
+    function listGames(mGames, mContainer, mType) {
+
+      mContainer.innerHTML = "<h3></h3>";
+      for (let i = 0; i < mGames.length; i++) {
+        let games = mGames[i];
+        if (mType == games[6]) {
+          mContainer.innerHTML += "" + games[0] + "&nbsp" + games[1] + "<span>" + "&nbsp" + games[2] + "</span>" + "&nbsp" + games[3] + "&nbsp" + games[4] + "&nbsp" + games[5] + "&nbsp" + games[6] + "&nbsp" + games[7] + "</p>";
+        }
+      }
+    }
+
+  window.onload = function () {
+
+      //alert("test");
+
+      let containerPlay = document.getElementById("c_players");
+
+      listGames(games, containerPlayers, "test");
+
+    }
+
+
+
 
   </script>
   </body>

@@ -9,7 +9,7 @@ function pillarDatos() {
     document.getElementById("salidaNombre").innerHTML = nombre;
     document.getElementById("lanzamiento").innerHTML = lanzamiento;
     document.getElementById("pegi").innerHTML = pegi;
-    document.getElementById("genere").innerHTML = genere;
+    document.getElementById("genero").innerHTML = genero;
 }
 
 
