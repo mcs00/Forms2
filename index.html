@@ -99,19 +99,38 @@
           <input type="text" id="nombre" class="col-sm-3">
           <label for="lanzamiento">Lanzamiento</label>
           <input type="text" id="lanzamiento" class="col-sm-3">
-          <label for="pegi">Pegi</label>
-          <input type="text" id="pegi" class="col-sm-3">
+
+            <label for="pegi">PEGI:</label>
+            <select id="pegi" class="col-sm-3">
+              <option selected>Elige</option>
+              <option>+3</option>
+              <option>+7</option>
+              <option>+12</option>
+              <option>+16</option>
+              <option>+18</option>
+              </select>
+
         </div>
 
         <div class="container2">
           <label for="desarrollador">Desarrollador</label>
           <input type="text" id="desarrollador" class="col-sm-5">
           <label for="genero">Género</label>
-          <input type="text" id="genero" class="col-sm-5">
+          <select id="genero" class="col-sm-5">
+            <option selected>Elige el genero</option>
+            <option>Acción</option>
+            <option>Aventura</option>
+            <option>Deportes</option>
+            <option>Estrategia</option>
+            <option>Rol</option>
+          </select>
         </div>
 
+
         <div class="container">
-          <button type="button" class="btn btn-primary" onclick="printData()">Enviar</button>
+          <button class="btn btn-primary btn-block" onclick="printData()">
+            Cargar los datos insertados
+          </button>
         </div>
 
 
@@ -123,15 +142,19 @@
             <th scope="col">Nombre</th>
             <th scope="col">Desarollador</th>
             <th scope="col">Lanzamiento</th>
+            <th scope="col">PEGI</th>
+            <th scope="col">Género</th>
           </tr>
           </thead>
           <br>
-          <tbody id="content-games">
+          <tbody id="print_games">
           <tr>
             <th scope="row"></th>
-            <td id="salidaNombre"></td>
-            <td id="salidaDesarrollador"></td>
-            <td id="salidaLanzamiento"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row"></th>
@@ -149,39 +172,80 @@
         </table>
       </div>
       <div>
+      <h3>Opiniones de nuestros usuarios</h3>
+      </div>
+      <br>
+      <div class="media border p-3">
+        <img src="imagenes/img_avatar3.png" alt="Lucas Vazquez" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          <h4>Raul Gonzalez<small><i>Publicado el 11/03/2019</i></small></h4>
+          <p>He tenido una muy buena experiencia con ellos, muy recomendable</p>
+        </div>
+      </div>
 
+      <div class="media border p-3">
+        <img src="imagenes/img_avatar3.png" alt="Pedro Camacho" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          <h4>Pedro Camacho <small><i>Publicado el 16/03/2019</i></small></h4>
+          <p>He tenido una muy buena experiencia con ellos, muy recomendable</p>
+        </div>
+      </div>
+
+      <div class="media border p-3">
+        <img src="imagenes/img_avatar4.png" alt="Laura García" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          <h4>Laura García<small><i>Publicado el 25/03/2019</i></small></h4>
+          <p>He tenido una muy buena experiencia con ellos, muy recomendable</p>
+        </div>
+      </div>
+      <br>
       <footer>
          <a>2019 - Miguel Carbonell Sevillano</a>
       </footer>
-        <div class="fields">
-          <div id="c_players" class=""></div>
-          <div id="c_players_pro"></div>
-        </div>
-      </div>
     </div>
   <script>
+
+    class Game{
+      constructor(){
+              this.nombre=nombre;
+              this.desarrollador=desarrollador;
+              this.lanzamiento=lanzamiento;
+              this.pegi=pegi;
+              this.genero=genero;
+      }
+    }
+
+
+
 
     function printData() {
       let nombre = document.getElementById("nombre").value;
       let lanzamiento = document.getElementById("lanzamiento").value;
-      let pegi = document.getElementById("pegi");
+      let pegi = document.getElementById("pegi").value;
       let desarrollador = document.getElementById("desarrollador").value;
-      let genero = document.getElementById("genero");
+      let genero = document.getElementById("genero").value;
 
-      document.getElementById("salidaNombre").innerHTML = nombre;
-      document.getElementById("salidaLanzamiento").innerHTML = lanzamiento;
-      //document.getElementById("Pegi").innerHTML = pegi;
-      document.getElementById("salidaDesarrollador").innerHTML = desarrollador;
-      //document.getElementById("Genero").innerHTML = genero;
+      //document.getElementById("salidaNombre").innerHTML = nombre;
+      //document.getElementById("salidaDesarrollador").innerHTML = desarrollador;
+      //document.getElementById("salidaLanzamiento").innerHTML = lanzamiento;
+      //document.getElementById("salidaPegi").innerHTML = pegi;
+      //document.getElementById("salidaGenero").innerHTML = genero;
+
+      games.push(new Game(games.lenght+1, nombre, lanzamiento, pegi, desarrollador, genero));
+
+
+      let containerGames = document.getElementById("print_games");
+    listGames(games,containerGames,"test");
+
+
     }
 
     let games = [
-      ["1", "Call of Duty Modern Warfare", "2011", "18", "Activision", "Acción","test"],
-      ["2", "FIFA 17", "2017", "3", "EA", "Deportes","test"],
-      ["3", "Spider-Man The Game", "2018", "12", "Activision", "Aventura","test"],
-      ["4", "Need for Speed", "2016", "12", "EA", "Deportes","test"],
-      ["5", "Call of Duty Modern Warfare", "2011", "18", "Activision", "Acción","test"],
-      ["6", "Call of Duty Modern Warfare", "2011", "18", "Activision", "Acción","Test"]
+      ["1", "Call of Duty Modern Warfare", "Activision", "2011", "18", "Acción","test"],
+      ["2", "FIFA 17", "EA", "2017", "3", "Deportes","test"],
+      ["3", "Spider-Man The Game", "Activision", "2016", "12", "Aventura","test"],
+      ["4", "Need for Speed", "EA", "2014", "3", "Deportes","test"],
+      ["5", "Dead by Daylight", "Treyarch", "2018", "18", "Acción","test"]
     ];
 
 
@@ -191,7 +255,18 @@
       for (let i = 0; i < mGames.length; i++) {
         let games = mGames[i];
         if (mType == games[6]) {
-          mContainer.innerHTML += "" + games[0] + "&nbsp" + games[1] + "<span>" + "&nbsp" + games[2] + "</span>" + "&nbsp" + games[3] + "&nbsp" + games[4] + "&nbsp" + games[5] + "&nbsp" + games[6] + "&nbsp" + games[7] + "</p>";
+
+          mContainer.innerHTML += `<tr>
+        <th scope="row">${games[0]}</th>
+                <td>${games[1]}</td>
+                <td>${games[2]}</td>
+                <td>${games[3]}</td>
+                <td>${games[4]}</td>
+                <td>${games[5]}</td>
+                </tr>
+                `;
+
+        //  mContainer.innerHTML += "" + games[0] + "&nbsp" + games[1] + "<span>" + "&nbsp" + games[2] + "</span>" + "&nbsp" + games[3] + "&nbsp" + games[4] + "&nbsp" + games[5] + "&nbsp" + games[6] + "&nbsp" + games[7] + "</p>";
         }
       }
     }
@@ -200,9 +275,11 @@
 
       //alert("test");
 
-      let containerPlay = document.getElementById("c_players");
+    printData();
 
-      listGames(games, containerPlayers, "test");
+      let containerGames = document.getElementById("print_games");
+
+      listGames(games, containerGames, "test");
 
     }
 

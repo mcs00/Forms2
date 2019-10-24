@@ -21,7 +21,7 @@ a:hover {text-decoration:underline;}
   margin: auto;
   clear: both;
   background-color: lightgray;
-  height: 1000px;
+  height: 1476px;
 }
 .carousel{
   width: 639px;
@@ -116,4 +116,9 @@ background: black;
   text-align: center;
   font-size: 12px;
   color: #fff;
+}
+
+.iframe{
+  text-align: center;
+
 }
